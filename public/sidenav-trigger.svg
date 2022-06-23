@@ -1,0 +1,13 @@
+<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="18"
+                viewBox="0 0 24 18"
+              >
+                <path
+                  id="sidenav-icon"
+                  d="M4,6H28V9H4Zm6,7.5H28v3H10ZM17.5,21H28v3H17.5Z"
+                  transform="translate(-4 -6)"
+                  fill="#fff"
+                />
+              </svg>
