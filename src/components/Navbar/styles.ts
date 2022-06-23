@@ -13,6 +13,10 @@ export const Body = styled.div`
     left: 0;
 
     z-index: 500;
+
+    @media (max-width: 768px) {
+        height: 64px;
+    }
 `;
 
 export const LogoWrapper = styled.div`
@@ -23,6 +27,10 @@ export const LogoWrapper = styled.div`
     height: auto;
 
     cursor: pointer;
+
+    @media (max-width: 768px) {
+        width: 125px;
+    }
 `;
 
 export const SidenavWrapper = styled.div`

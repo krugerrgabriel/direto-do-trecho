@@ -16,6 +16,26 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
     <>
       <Head>
         <title> Direto do Trecho </title>
+
+        <meta
+          name="description"
+          content="Blog desenvolvido para centralizar as notícias do Grupo UNUS"
+        />
+        <meta property="og:title" content="Direto do Trecho" />
+        <meta
+          property="og:url"
+          content={`https://direto-do-trecho.vercel.app`}
+        />
+        <meta
+          property="og:description"
+          content="Blog desenvolvido para centralizar as notícias do Grupo UNUS"
+        />
+        <meta
+          property="og:image"
+          content={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/2_thumb.jpg`}
+        />
+        <meta property="og:type" content="blog" />
+        <meta property="og:locale" content="pt_BR" />
       </Head>
 
       <Navbar />
@@ -23,28 +43,36 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
       <MoreVisited>
         <Container>
           <Row>
-            <Col lg={6}>
+            <Col lg={6} md={6} sm={12} xs={12}>
               {/* @ts-ignore */}
               <NewsCard item={posts.data[0]} type="MoreVisited-ExtraLarge" />
             </Col>
 
-            <Col lg={6} className="d-flex flex-column justify-content-between">
+            <Col
+              lg={6}
+              md={6}
+              sm={12}
+              xs={12}
+              className="d-flex flex-column justify-content-between"
+            >
+              <div className="margin-24px-768px"></div>
               <Row>
-                <Col lg={6}>
+                <Col xs={6}>
                   {/* @ts-ignore */}
                   <NewsCard item={posts.data[1]} type="MoreVisited-Normal" />
                 </Col>
-                <Col lg={6}>
+                <Col xs={6}>
                   {/* @ts-ignore */}
                   <NewsCard item={posts.data[2]} type="MoreVisited-Normal" />
                 </Col>
               </Row>
+              <div className="margin-24px-768px"></div>
               <Row>
-                <Col lg={6}>
+                <Col xs={6}>
                   {/* @ts-ignore */}
                   <NewsCard item={posts.data[3]} type="MoreVisited-Normal" />
                 </Col>
-                <Col lg={6}>
+                <Col xs={6}>
                   {/* @ts-ignore */}
                   <NewsCard item={posts.data[4]} type="MoreVisited-Normal" />
                 </Col>

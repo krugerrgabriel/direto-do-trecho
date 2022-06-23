@@ -27,4 +27,20 @@ export default createGlobalStyle`
     .text-decoration-none{
         text-decoration: none;
     }
+
+    @media(max-width: 992px){
+        .margin-36px-992px{
+            margin: 36px 0 0 0;
+        }
+    }
+
+    @media(max-width: 768px){
+        .margin-24px-768px{
+            margin: 24px 0 0 0;
+        }
+
+        .justify-768px-center{
+            justify-content: center !important;
+        }
+    }
 `;

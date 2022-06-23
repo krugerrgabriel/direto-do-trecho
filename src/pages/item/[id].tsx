@@ -57,7 +57,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
       <Breadcrumb itemId={post.id} itemName={post.title} />
       <Container>
         <Row className="margin-72px">
-          <Col lg={8}>
+          <Col lg={8} md={12} xs={12}>
             <Title>{post.title}</Title>
             <FineLine>{post.fineLine}</FineLine>
 
@@ -83,6 +83,8 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             ></div>
           </Col>
 
+          <div className="margin-36px-992px"></div>
+
           <Col lg={4}>
             {/* @ts-ignore */}
             <Sidebar posts={posts.moreVisited} />
@@ -97,7 +99,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           </Col>
           {posts.related.map((item, index) => {
             return (
-              <Col lg={4} key={index}>
+              <Col lg={4} md={4} sm={12} key={index}>
                 <NewsMini
                   /* @ts-ignore */
                   item={item}

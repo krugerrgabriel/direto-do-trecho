@@ -5,6 +5,10 @@ export const NavbarPadding = styled.div`
 
     width: 100vw;
     height: 82px;
+
+    @media(max-width: 768px){
+        height: 64px;
+    }
 `;
 
 export const Title = styled.h1`
@@ -19,6 +23,18 @@ export const Title = styled.h1`
     text-align: start;
 
     margin: 0;
+
+    @media(max-width: 768px){
+        font-size: 28px;
+
+        line-height: 36px;
+    }
+
+    @media(max-width: 576px){
+        font-size: 24px;
+
+        line-height: 32px;
+    }
 `;
 
 export const FineLine = styled.h3`
@@ -30,6 +46,14 @@ export const FineLine = styled.h3`
     line-height: 28px;
 
     margin: 12px 0;
+
+    @media(max-width: 768px){
+        font-size: 16px;
+
+        line-height: 21px;
+
+        margin: 8px 0 14px 0;
+    }
 `;
 
 export const Author = styled.h4`

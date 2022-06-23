@@ -9,6 +9,20 @@ export const Body = styled.div`
         color: ${({ theme }) => theme.colors.white};
 
         margin: 0;
+
+        @media (max-width: 1200px) {
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            text-align: center;
+
+            margin: 18px 0 0 0;
+        }
+
+        @media (max-width: 576px) {
+            font-size: 14px;
+        }
     }
 `;
 
@@ -21,4 +35,10 @@ export const LogoWrapper = styled.div`
     height: 100%;
 
     opacity: 0.75;
+
+    @media (max-width: 576px) {
+        width: 75%;
+
+        margin: 0 auto;
+    }
 `;

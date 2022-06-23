@@ -16,8 +16,9 @@ export const Body = styled.article<{ type: String; }>`
         display: flex;
         flex-direction: column;
         margin: ${({ type }) => type == 'normal' ? '0 0 0 16px' : '4px 0 0 0'};
+    }
 
-        p{
+    p{
             color: ${({ theme }) => theme.colors.gray01};
 
             font-size: 18px;
@@ -44,7 +45,6 @@ export const Body = styled.article<{ type: String; }>`
                 }
             }
         }
-    }
 
     h3{
         color: ${({ theme }) => theme.colors.primary};
@@ -78,6 +78,96 @@ export const Body = styled.article<{ type: String; }>`
             text-decoration: underline;
         }
     }
+
+    @media(max-width: 1200px) {
+        h3{
+            ${({ type }) => type == 'normal' ? 'font-size: 13px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'margin: 0 0 6px 0;' : ''};
+        }
+
+        h2{
+            ${({ type }) => type == 'normal' ? 'font-size: 20px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'line-height: 26px;' : ''};
+        }
+
+        p{
+            ${({ type }) => type == 'normal' ? 'font-size: 15px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'line-height: 21px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'margin: 2px 0 8px 0;' : ''};
+        }
+    }
+
+    @media(max-width: 992px) {
+        h3{
+            font-size: ${({ type }) => type == 'normal' ? '14px' : '12px'};
+        }
+
+        h2{
+            font-size: ${({ type }) => type == 'normal' ? '22px' : '28px'};
+
+            line-height: ${({ type }) => type == 'normal' ? '28px' : '36px'};
+        }
+
+        p{
+            font-size: ${({ type }) => type == 'normal' ? '17px' : '18px'};
+
+            line-height: ${({ type }) => type == 'normal' ? '23px' : '27px'};
+
+            margin: ${({ type }) => type == 'normal' ? '4px 0 12px 0' : ''};
+        }
+    }
+
+    @media(max-width: 768px) {
+        h3{
+            font-size: ${({ type }) => type == 'normal' ? '13px' : '14px'};
+        }
+
+        h2{
+            font-size: ${({ type }) => type == 'normal' ? '16px' : '28px'};
+
+            line-height: ${({ type }) => type == 'normal' ? '24px' : '36px'};
+        }
+
+        p{
+            font-size: ${({ type }) => type == 'normal' ? '14px' : '18px'};
+
+            line-height: ${({ type }) => type == 'normal' ? '20px' : '27px'};
+
+            margin: ${({ type }) => type == 'normal' ? '2px 0 8px 0' : ''};
+        }
+    }
+
+    @media(max-width: 575px) {
+        flex-direction: column;
+
+        div.info{
+            margin: 0;
+        }
+
+        h3{
+            font-size: ${({ type }) => type == 'normal' ? '13px' : '14px'};
+
+            ${({ type }) => type == 'normal' ? 'margin: 0;' : ''};
+        }
+
+        h2{
+            ${({ type }) => type == 'normal' ? 'font-size: 17px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'line-height: 24px' : ''};
+        }
+
+        p{
+            ${({ type }) => type == 'normal' ? 'font-size: 15px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'line-height: 21px;' : ''};
+
+            ${({ type }) => type == 'normal' ? 'margin: 4px 0 8px 0' : ''};
+        }
+    }
 `;
 
 export const ImageWrapper = styled.div<{ type: String; }>`
@@ -87,6 +177,27 @@ export const ImageWrapper = styled.div<{ type: String; }>`
     height: ${({ type }) => type == 'normal' ? '225px' : '400px'};
 
     position: relative;
+
+    @media(max-width: 1200px) {
+        width: ${({ type }) => type == 'normal' ? '235px' : '100%'};
+    }
+
+    @media(max-width: 992px) {
+        ${({ type }) => type == 'normal' ? '' : 'aspect-ratio: 16/9;'};
+        width: ${({ type }) => type == 'normal' ? '225px' : '100%'};
+    }
+
+    @media(max-width: 768px) {
+        width: ${({ type }) => type == 'normal' ? '200px' : '100%'};
+    }
+
+    @media(max-width: 576px) {
+        height: 275px;
+        aspect-ratio: 16/9;
+        width: 100%;
+
+        margin: 0 0 12px 0;
+    }
 `;
 
 export const Divider = styled.hr<{type?: String}>`

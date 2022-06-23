@@ -22,6 +22,10 @@ export const Body = styled.div`
 
         text-decoration: none;
     }
+
+    @media(max-width: 768px){
+        top: 64px;
+    }
 `;
 
 export const ContainerStyled = styled(Container)`
