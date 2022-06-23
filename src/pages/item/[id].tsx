@@ -1,5 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
+import Head from 'next/head';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Navbar from '../../components/Navbar';
@@ -30,6 +31,27 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
 
   return (
     <>
+      <Head>
+        <title>{post.title} | Direto do Trecho</title>
+
+        <meta name="description" content={post.fineLine} />
+        <meta
+          property="og:title"
+          content={post.title + ' | Direto do Trecho'}
+        />
+        <meta
+          property="og:url"
+          content={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+        />
+        <meta property="og:description" content={post.fineLine} />
+        <meta
+          property="og:image"
+          content={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
+        />
+        <meta property="og:type" content="blog" />
+        <meta property="og:locale" content="pt_BR" />
+      </Head>
+
       <NavbarPadding />
       <Navbar />
       <Breadcrumb itemId={post.id} itemName={post.title} />
