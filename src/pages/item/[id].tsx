@@ -48,7 +48,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           property="og:image"
           content={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
         />
-        <meta property="og:type" content="blog" />
+        <meta property="og:type" content="article" />
         <meta property="og:locale" content="pt_BR" />
       </Head>
 
