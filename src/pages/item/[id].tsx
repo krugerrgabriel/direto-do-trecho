@@ -83,9 +83,8 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             ></div>
           </Col>
 
-          <div className="margin-36px-992px"></div>
-
           <Col lg={4}>
+            <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
             <Sidebar posts={posts.moreVisited} />
           </Col>
