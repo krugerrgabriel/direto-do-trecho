@@ -3,6 +3,7 @@ export interface IPostFetch{
         data: [
             {
                 id: Number,
+                slug: string,
                 title: string,
                 category: string,
                 fineLine: string,
@@ -21,6 +22,7 @@ export interface IPostFetch{
         related: [
             {
                 id: Number,
+                slug: string,
                 title: string,
                 category: string,
                 fineLine: string,
@@ -39,6 +41,7 @@ export interface IPostFetch{
         moreVisited: [
             {
                 id: Number,
+                slug: string,
                 title: string,
                 category: string,
                 fineLine: string,
