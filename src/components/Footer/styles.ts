@@ -42,3 +42,26 @@ export const LogoWrapper = styled.div`
         margin: 0 auto;
     }
 `;
+
+export const Sitemap = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        color: ${({ theme }) => theme.colors.white};
+
+        font-size: 16px;
+        font-weight: 600;
+
+        margin: 0 0 6px 0;
+    }
+
+    a{
+        color: ${({ theme }) => theme.colors.white};
+
+        font-size: 13px;
+        font-weight: 500;
+
+        margin: 1px 0;
+    }
+`;

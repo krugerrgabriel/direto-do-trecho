@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Navbar from '../components/Navbar';
 import NewsCard from '../components/NewsCard';
@@ -17,6 +19,31 @@ import { MoreVisited } from '../styles/home';
 import { IPostFetch } from '../interfaces/IPost';
 
 const Home: React.FC<IPostFetch> = ({ posts }) => {
+  const [count, setCount] = useState({
+    prev: 0,
+    next: 3
+  });
+  const [current, setCurrent] = useState(
+    posts.data.slice(count.prev, count.next)
+  );
+  const [hasMore, setHasMore] = useState(true);
+
+  const getMoreData = () => {
+    if (current.length === posts.data.length) {
+      setHasMore(false);
+      return;
+    }
+    setTimeout(() => {
+      setCurrent(
+        current.concat(posts.data.slice(count.prev + 3, count.next + 3))
+      );
+    }, 2000);
+    setCount(prevState => ({
+      prev: prevState.prev + 3,
+      next: prevState.next + 3
+    }));
+  };
+
   return (
     <>
       <Head>
@@ -91,30 +118,38 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
         <Row className="margin-36px">
           <Col lg={8}>
             <Row>
-              {/* @ts-ignore */}
-              {posts.data.map((item, index) => {
-                if ((index + 1) % 4 == 0) {
-                  return (
-                    <React.Fragment key={index}>
-                      <Banner wDivider={true} />
-                      <NewsItem
-                        /* @ts-ignore */
-                        item={item}
-                        type="big"
-                      />
-                    </React.Fragment>
-                  );
-                } else {
-                  return (
-                    <NewsItem
-                      /* @ts-ignore */
-                      item={item}
-                      type="normal"
-                      key={index}
-                    />
-                  );
-                }
-              })}
+              <InfiniteScroll
+                dataLength={posts.data.length} //This is important field to render the next data
+                next={getMoreData}
+                hasMore={true}
+                loader={<h4>Carregando...</h4>}
+              >
+                {/* @ts-ignore */}
+                {current &&
+                  current.map((item, index) => {
+                    if ((index + 1) % 4 == 0) {
+                      return (
+                        <React.Fragment key={index}>
+                          <Banner wDivider={true} />
+                          <NewsItem
+                            /* @ts-ignore */
+                            item={item}
+                            type="big"
+                          />
+                        </React.Fragment>
+                      );
+                    } else {
+                      return (
+                        <NewsItem
+                          /* @ts-ignore */
+                          item={item}
+                          type="normal"
+                          key={index}
+                        />
+                      );
+                    }
+                  })}
+              </InfiniteScroll>
             </Row>
           </Col>
 

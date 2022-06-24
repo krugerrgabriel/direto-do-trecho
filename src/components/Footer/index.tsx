@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import { Body, LogoWrapper } from './styles';
+import { Body, LogoWrapper, Sitemap } from './styles';
 
 const Footer: React.FC = () => {
   return (
@@ -20,9 +21,34 @@ const Footer: React.FC = () => {
           </Col>
 
           <Col
+            xl={3}
+            lg={4}
+            md={4}
+            sm={12}
+            sx={12}
+            className="justify-content-center d-flex"
+          >
+            <Sitemap>
+              <h2> ACESSO RÁPIDO </h2>
+              <Link href="/">
+                <a> INÍCIO </a>
+              </Link>
+              <Link href="/">
+                <a> LOREM IPSUM </a>
+              </Link>
+              <Link href="/">
+                <a> LOREM IPSUM </a>
+              </Link>
+              <Link href="/">
+                <a> LOREM IPSUM </a>
+              </Link>
+            </Sitemap>
+          </Col>
+
+          <Col
             xl={4}
-            lg={6}
-            md={6}
+            lg={5}
+            md={4}
             sm={12}
             xs={12}
             className="d-flex align-items-center justify-content-end justify-768px-center"
