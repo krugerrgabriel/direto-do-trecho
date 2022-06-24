@@ -1,6 +1,7 @@
 export interface INewsCard{
     item: {
         id: Number,
+        slug: string,
         title: string,
         category: string,
         fineLine: string,

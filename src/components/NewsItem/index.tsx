@@ -18,7 +18,7 @@ const NewsItem: React.FC<INewsCard> = props => {
 
   return (
     <>
-      <Link href={`/item/${item.id}`}>
+      <Link href={`/item/${item.slug}`}>
         <a className="text-decoration-none">
           <Body type={props.type}>
             {props.type == 'big' ? (

@@ -18,7 +18,7 @@ const NewsMini: React.FC<INewsCard> = props => {
 
   return (
     <>
-      <Link href={`/item/${item.id}`}>
+      <Link href={`/item/${item.slug}`}>
         <a className="text-decoration-none">
           <Body type={props.type} color={color}>
             <h3>{item.category}</h3>

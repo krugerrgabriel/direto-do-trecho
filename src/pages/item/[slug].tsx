@@ -69,7 +69,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
         />
         <meta
           property="og:url"
-          content={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+          content={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
         />
         <meta property="og:description" content={post.fineLine} />
         <meta
@@ -142,7 +142,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
         <Row className="margin-24px">
           <Col lg={3} md={6} sm={12} xs={12}>
             <FacebookShareButton
-              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
               quote={post.title}
               hashtag={`#diretodotrecho`} // @ts-ignore
               description={post.fineLine}
@@ -155,7 +155,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           <Col lg={3} md={6} sm={12} xs={12}>
             <TwitterShareButton
               title={'Confira esse artigo do Direto do Trecho: ' + post.title}
-              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
               hashtags={['diretodotrecho']} // @ts-ignore
               className="w-100"
             >
@@ -166,7 +166,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           <Col lg={3} md={6} sm={12} xs={12}>
             <WhatsappShareButton
               title={'Confira esse artigo do Direto do Trecho: ' + post.title}
-              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
               separator=" - "
               className="w-100"
             >
@@ -177,7 +177,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           <Col lg={3} md={6} sm={12} xs={12}>
             <TelegramShareButton
               title={'Confira esse artigo do Direto do Trecho: ' + post.title}
-              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
               className="w-100"
             >
               <ShareButton type="telegram" text="ENCAMINHAR" />
@@ -233,7 +233,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = posts.data.map(item => {
     return {
-      params: { id: item.id }
+      params: { slug: item.slug }
     };
   });
 
@@ -244,7 +244,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async context => {
-  const { id } = context.params;
+  const { slug } = context.params;
 
   const res = await fetch(
     'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/news/get.php',
@@ -256,7 +256,7 @@ export const getStaticProps: GetStaticProps = async context => {
         'Content-Type': 'application/json; charset=UTF-8'
       },
       body: JSON.stringify({
-        itemId: id,
+        slug,
         related: true,
         new: true,
         moreVisited: true
