@@ -201,7 +201,7 @@ export const ImageWrapper = styled.div<{ type: String; }>`
 `;
 
 export const Divider = styled.hr<{type?: String}>`
-    margin: ${({ type }) => type == 'half' ? '36px auto' : '18px 0'};
+    margin: ${({ type }) => type == 'half' ? '36px 0 36px 12px' : '18px 0'};
 
     ${({ type }) => type == 'half' ? 'width: 225px' : ''};
 `;

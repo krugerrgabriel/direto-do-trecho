@@ -14,13 +14,16 @@ export const NavbarPadding = styled.div`
 export const Title = styled.h1`
     color: ${({ theme }) => theme.colors.black};
 
-    font-size: 31px;
+    font-size: 40px;
     font-weight: 700;
     font-style: unset;
 
-    line-height: 40px;
+    line-height: 46px;
 
     text-align: start;
+    text-transform: uppercase;
+
+    letter-spacing: -0.8px;
 
     margin: 0;
 
@@ -35,6 +38,14 @@ export const Title = styled.h1`
 
         line-height: 32px;
     }
+`;
+
+export const Box = styled.div`
+    background-color: ${({ theme }) => theme.colors.gray03};
+
+    padding: 1px 24px;
+
+    margin: 24px 0;
 `;
 
 export const FineLine = styled.h3`
@@ -75,6 +86,8 @@ export const Date = styled.h4`
     font-size: 13px;
     font-weight: 500;
 
+    margin: 0 0 24px 0;
+
     b{
         font-weight: 600;
     }
@@ -87,4 +100,18 @@ export const BannerWrapper = styled.div`
     height: 400px;
 
     margin: 24px 0;
+`;
+
+export const IconBox = styled.div`
+    position: absolute;
+
+    left: 12px;
+    top: -10px;
+
+    div{
+        position: relative;
+
+        aspect-ratio: 1/1;
+        width: 52px;
+    }
 `;

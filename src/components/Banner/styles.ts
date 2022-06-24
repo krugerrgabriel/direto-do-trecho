@@ -8,4 +8,6 @@ export const Body = styled.div`
     width: 100%;
 
     padding: 0;
+
+    margin: 26px 0 0 0;
 `;

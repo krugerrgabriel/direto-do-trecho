@@ -16,6 +16,7 @@ import { Divider } from '../../components/NewsItem/styles';
 import Sidebar from '../../components/Sidebar';
 import Banner from '../../components/Banner';
 import ShareButton from '../../components/ShareButton';
+import Footer from '../../components/Footer';
 
 import {
   Title,
@@ -23,7 +24,9 @@ import {
   Author,
   Date,
   BannerWrapper,
-  NavbarPadding
+  NavbarPadding,
+  Box,
+  IconBox
 } from '../../styles/item';
 import { Subtitle } from '../../styles/home';
 
@@ -75,15 +78,18 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
       <Container>
         <Row className="margin-72px">
           <Col lg={8} md={12} xs={12}>
-            <Title>{post.title}</Title>
-            <FineLine>{post.fineLine}</FineLine>
-
             <Author>
               <b>Por:</b> {post.userName}
             </Author>
             <Date>
               <b>ATUALIZADO EM:</b> {returnFormattedDate(post.createdAt)}
             </Date>
+
+            <Title>{post.title}</Title>
+
+            <Box>
+              <FineLine>{post.fineLine}</FineLine>
+            </Box>
 
             <BannerWrapper>
               <Image
@@ -160,8 +166,18 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
         <Divider type="half" />
 
         <Row className="margin-36px">
-          <Col lg={12}>
-            <Subtitle> RELACIONADOS </Subtitle>
+          <Col lg={12} className="position-relative">
+            <IconBox>
+              <div>
+                <Image
+                  src="/mao-dupla-adiante.png"
+                  alt="Logo da Segtruck"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </IconBox>
+            <Subtitle margin="0 0 28px 42px"> RELACIONADOS </Subtitle>
           </Col>
           {posts.related.map((item, index) => {
             return (
@@ -175,6 +191,8 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           })}
         </Row>
       </Container>
+
+      <Footer />
     </>
   );
 };

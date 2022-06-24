@@ -17,6 +17,9 @@ export default createGlobalStyle`
         position: relative;
     }
 
+    .margin-12px{
+        margin: 12px 0 0 0;
+    }
     .margin-24px{
         margin: 24px 0 0 0;
     }
