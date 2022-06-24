@@ -2,6 +2,12 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
 import { Container, Row, Col } from 'react-bootstrap';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  TelegramShareButton
+} from 'react-share';
 
 import Navbar from '../../components/Navbar';
 import NewsMini from '../../components/NewsMini';
@@ -9,6 +15,7 @@ import Breadcrumb from '../../components/Breadcrumb';
 import { Divider } from '../../components/NewsItem/styles';
 import Sidebar from '../../components/Sidebar';
 import Banner from '../../components/Banner';
+import ShareButton from '../../components/ShareButton';
 
 import {
   Title,
@@ -36,6 +43,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
         <title>{post.title} | Direto do Trecho</title>
 
         <meta name="description" content={post.fineLine} />
+        <meta name="og:site_name" content="Direto do Trecho" />
         <meta
           property="og:title"
           content={post.title + ' | Direto do Trecho'}
@@ -50,7 +58,15 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           content={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
         />
         <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.createdAt} />
+        <meta property="article:tag" content={post.companies} />
         <meta property="og:locale" content="pt_BR" />
+        {/* @ts-ignore */}
+        <meta name="twitter:card" value="summary" />
+        <meta name="twitter:site" content="@krugerrgabriel" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.fineLine} />
+        <meta name="twitter:creator" content="@krugerrgabriel" />
       </Head>
 
       <NavbarPadding />
@@ -84,10 +100,56 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             ></div>
           </Col>
 
-          <Col lg={4}>
+          <Col lg={4} className="hide-992px">
             <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
+          </Col>
+        </Row>
+
+        <Row className="margin-24px">
+          <Col lg={3} md={6} sm={12} xs={12}>
+            <FacebookShareButton
+              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              quote={post.title}
+              hashtag={`#diretodotrecho`} // @ts-ignore
+              description={post.fineLine}
+              className="w-100"
+            >
+              <ShareButton type="facebook" text="COMPARTILHAR" />
+            </FacebookShareButton>
+          </Col>
+
+          <Col lg={3} md={6} sm={12} xs={12}>
+            <TwitterShareButton
+              title={'Confira esse artigo do Direto do Trecho: ' + post.title}
+              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              hashtags={['diretodotrecho']} // @ts-ignore
+              className="w-100"
+            >
+              <ShareButton type="twitter" text="TWEETAR" />
+            </TwitterShareButton>
+          </Col>
+
+          <Col lg={3} md={6} sm={12} xs={12}>
+            <WhatsappShareButton
+              title={'Confira esse artigo do Direto do Trecho: ' + post.title}
+              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              separator=" - "
+              className="w-100"
+            >
+              <ShareButton type="whatsapp" text="ENCAMINHAR" />
+            </WhatsappShareButton>
+          </Col>
+
+          <Col lg={3} md={6} sm={12} xs={12}>
+            <TelegramShareButton
+              title={'Confira esse artigo do Direto do Trecho: ' + post.title}
+              url={`https://direto-do-trecho.vercel.app/item/${post.id}`}
+              className="w-100"
+            >
+              <ShareButton type="telegram" text="ENCAMINHAR" />
+            </TelegramShareButton>
           </Col>
         </Row>
 

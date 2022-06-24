@@ -116,7 +116,7 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
             </Row>
           </Col>
 
-          <Col lg={4}>
+          <Col lg={4} className="hide-992px">
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
           </Col>

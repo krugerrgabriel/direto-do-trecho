@@ -35,6 +35,10 @@ export default createGlobalStyle`
         .margin-36px-992px{
             margin: 36px 0 0 0;
         }
+
+        .hide-992px{
+            display: none;
+        }
     }
 
     @media(max-width: 768px){
