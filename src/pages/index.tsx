@@ -122,7 +122,7 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
                 dataLength={posts.data.length} //This is important field to render the next data
                 next={getMoreData}
                 hasMore={true}
-                loader={<h4>Carregando...</h4>}
+                loader={''}
               >
                 {/* @ts-ignore */}
                 {current &&
