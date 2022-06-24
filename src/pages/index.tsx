@@ -21,7 +21,7 @@ import { IPostFetch } from '../interfaces/IPost';
 const Home: React.FC<IPostFetch> = ({ posts }) => {
   const [count, setCount] = useState({
     prev: 0,
-    next: 3
+    next: 10
   });
   const [current, setCurrent] = useState(
     posts.data.slice(count.prev, count.next)
@@ -35,12 +35,12 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
     }
     setTimeout(() => {
       setCurrent(
-        current.concat(posts.data.slice(count.prev + 3, count.next + 3))
+        current.concat(posts.data.slice(count.prev + 10, count.next + 10))
       );
     }, 2000);
     setCount(prevState => ({
-      prev: prevState.prev + 3,
-      next: prevState.next + 3
+      prev: prevState.prev + 10,
+      next: prevState.next + 10
     }));
   };
 
