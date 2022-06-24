@@ -6,16 +6,18 @@ export const Body = styled.div`
     -webkit-backdrop-filter: blur(8px);
 
     width: 100vw;
-    height: 82px;
+    height: 102px;
     
     position: fixed;
     top: 0;
     left: 0;
 
+    border-bottom: 6px solid ${({ theme }) => theme.colors.primary};
+
     z-index: 500;
 
     @media (max-width: 768px) {
-        height: 64px;
+        height: 70px;
     }
 `;
 

@@ -6,7 +6,7 @@ export const Body = styled.div`
     background-color: ${({ theme }) => theme.colors.gray03};
 
     position: fixed;
-    top: 82px;
+    top: 102px;
     left: 0;
 
     width: 100vw;
@@ -24,7 +24,7 @@ export const Body = styled.div`
     }
 
     @media(max-width: 768px){
-        top: 64px;
+        top: 70px;
     }
 `;
 

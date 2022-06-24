@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -17,6 +18,8 @@ import Sidebar from '../../components/Sidebar';
 import Banner from '../../components/Banner';
 import ShareButton from '../../components/ShareButton';
 import Footer from '../../components/Footer';
+import VerticalBanner from '../../components/VerticalBanner';
+import SkeletonLoader from '../../components/SkeletonLoader';
 
 import {
   Title,
@@ -26,7 +29,8 @@ import {
   BannerWrapper,
   NavbarPadding,
   Box,
-  IconBox
+  IconBox,
+  LegendBox
 } from '../../styles/item';
 import { Subtitle } from '../../styles/home';
 
@@ -38,6 +42,17 @@ import 'froala-editor/css/froala_style.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 const Item: React.FC<IPostFetch> = ({ posts }) => {
+  const pageRef = useRef();
+  const [height, setHeight] = useState(0);
+
+  const [newsImageLoading, setNewsImageLoading] = useState(false);
+
+  useEffect(() => {
+    // @ts-ignore
+    let newHeight = pageRef.current.clientHeight;
+    setHeight(newHeight);
+  }, []);
+
   var post = posts.data[0];
 
   return (
@@ -76,7 +91,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
       <Navbar />
       <Breadcrumb itemId={post.id} itemName={post.title} />
       <Container>
-        <Row className="margin-72px">
+        <Row className="margin-72px" ref={pageRef}>
           <Col lg={8} md={12} xs={12}>
             <Author>
               <b>Por:</b> {post.userName}
@@ -92,13 +107,22 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             </Box>
 
             <BannerWrapper>
+              {!newsImageLoading ? <SkeletonLoader /> : null}
               <Image
                 src={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
                 alt="Imagem da Notícia"
                 layout="fill"
                 objectFit="cover"
+                onLoad={() => setNewsImageLoading(true)}
               />
             </BannerWrapper>
+            {post.legend_file ? (
+              <LegendBox>
+                <p>{post.legend_file}</p>
+              </LegendBox>
+            ) : (
+              ''
+            )}
 
             <div
               className="fr-view" // @ts-ignore
@@ -110,6 +134,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
+            {height >= 1900 ? <VerticalBanner /> : ''}
           </Col>
         </Row>
 
@@ -170,7 +195,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             <IconBox>
               <div>
                 <Image
-                  src="/mao-dupla-adiante.png"
+                  src="/mao-dupla-adiantex250.png"
                   alt="Logo da Segtruck"
                   layout="fill"
                   objectFit="contain"

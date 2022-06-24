@@ -1,24 +1,32 @@
+import { useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Body, Overlay } from './styles';
+
+import SkeletonLoader from '../../components/SkeletonLoader';
 
 import { INewsCard } from './interface';
 
 import { returnFormattedDate } from '../../functions';
 
 const NewsCard: React.FC<INewsCard> = props => {
+  const [newsImageLoading, setNewsImageLoading] = useState(false);
+
   let { item } = props;
 
   return (
     <Link href={`/item/${item.id}`}>
       <a>
         <Body type={props.type}>
+          {!newsImageLoading ? <SkeletonLoader /> : null}
           <Image
             src={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${item.id}_thumb.jpg`}
             alt="Imagem da Notícia"
             layout="fill"
             objectFit="cover"
+            onLoad={() => setNewsImageLoading(true)}
           />
           <Overlay />
 

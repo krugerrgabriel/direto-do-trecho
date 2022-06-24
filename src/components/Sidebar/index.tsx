@@ -15,7 +15,7 @@ const Sidebar: React.FC<ISidebar> = props => {
         <div className="iconBox">
           <div>
             <Image
-              src="/curva-acentuada.png"
+              src="/curva-acentuadax250.png"
               alt="Logo da Segtruck"
               layout="fill"
               objectFit="contain"

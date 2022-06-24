@@ -99,7 +99,7 @@ export const BannerWrapper = styled.div`
     width: 100%;
     height: 400px;
 
-    margin: 24px 0;
+    margin: 24px 0 0 0;
 `;
 
 export const IconBox = styled.div`
@@ -113,5 +113,22 @@ export const IconBox = styled.div`
 
         aspect-ratio: 1/1;
         width: 52px;
+    }
+`;
+
+export const LegendBox = styled.div`
+    background-color: ${({ theme }) => theme.colors.primary};
+
+    height: max-content;
+    width: max-content;
+
+    padding: 4px 8px;
+    margin: 0 0 24px 0;
+
+    p{
+        font-size: 12px;
+        font-weight: 500;
+
+        margin: 0;
     }
 `;

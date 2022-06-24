@@ -14,6 +14,7 @@ export interface IPostFetch{
                 views: Number,
                 userId: Number,
                 userName: string,
+                legend_file?: string,
                 createdAt: string
             }
         ],
@@ -31,6 +32,7 @@ export interface IPostFetch{
                 views: Number,
                 userId: Number,
                 userName: string,
+                legend_file?: string,
                 createdAt: string
             }
         ],
@@ -48,6 +50,7 @@ export interface IPostFetch{
                 views: Number,
                 userId: Number,
                 userName: string,
+                legend_file?: string,
                 createdAt: string
             }
         ]

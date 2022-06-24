@@ -6,15 +6,14 @@ import { Divider } from '../NewsItem/styles';
 
 import { Text, Body } from './styles';
 
-const Banner: React.FC<{ wDivider?: Boolean }> = props => {
+const VerticalBanner: React.FC<{ wDivider?: Boolean }> = props => {
   let { wDivider } = props;
 
   return (
     <Col lg={12}>
-      <Text> ANÚNCIO PUBLICITÁRIO </Text>
       <Body>
         <Image
-          src="https://segtruck.com.br/assets/img/banners/segtruck_nacao-pesada01.jpg"
+          src="/vertical-banner.jpg"
           alt="Banner da Segtruck"
           layout="fill"
           objectFit="cover"
@@ -26,4 +25,4 @@ const Banner: React.FC<{ wDivider?: Boolean }> = props => {
   );
 };
 
-export default Banner;
+export default VerticalBanner;

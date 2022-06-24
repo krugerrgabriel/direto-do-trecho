@@ -9,6 +9,7 @@ import NewsItem from '../components/NewsItem';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
+import VerticalBanner from '../components/VerticalBanner';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { MoreVisited } from '../styles/home';
@@ -119,6 +120,7 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
           <Col lg={4} className="hide-992px">
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
+            <VerticalBanner />
           </Col>
         </Row>
       </Container>

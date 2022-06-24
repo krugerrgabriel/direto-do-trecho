@@ -5,7 +5,7 @@ export const MoreVisited = styled.div`
 
     border-bottom: 6px solid ${({ theme }) => theme.colors.primary};
 
-    padding: 118px 0 36px 0;
+    padding: 136px 0 36px 0;
 `;
 
 export const Subtitle = styled.h2<{ color?: string, margin: string }>`
