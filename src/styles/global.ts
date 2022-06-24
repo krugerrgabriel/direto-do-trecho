@@ -4,6 +4,10 @@ export default createGlobalStyle`
     * {
         font-family: "Outfit", sans-serif;
     }
+    
+    html { 
+        scroll-behavior: auto !important;
+    }
 
     body {
         margin: 0;

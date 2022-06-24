@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Body = styled.div`
     position: relative;
 
-    aspect-ratio: 1/1.35501;
+    aspect-ratio: 6/9;
     height: auto;
     width: 100%;
 
@@ -13,8 +13,10 @@ export const Body = styled.div`
 `;
 
 export const Text = styled.h6`
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 8px;
+    font-weight: 400;
 
-    margin: 0 0 -20px 0;
+    letter-spacing: 0.8px;
+
+    margin: 18px 0 -20px 12px;
 `;

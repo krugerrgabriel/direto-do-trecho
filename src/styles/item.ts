@@ -93,13 +93,13 @@ export const Date = styled.h4`
     }
 `;
 
-export const BannerWrapper = styled.div`
+export const BannerWrapper = styled.div<{ margin: boolean }>`
     position: relative;
 
     width: 100%;
     height: 400px;
 
-    margin: 24px 0 0 0;
+    margin: 24px 0 ${({ margin }) => margin ? '24px' : '0'} 0;
 `;
 
 export const IconBox = styled.div`
@@ -120,9 +120,9 @@ export const LegendBox = styled.div`
     background-color: ${({ theme }) => theme.colors.primary};
 
     height: max-content;
-    width: max-content;
+    width: 100%;
 
-    padding: 4px 8px;
+    padding: 14px 22px;
     margin: 0 0 24px 0;
 
     p{

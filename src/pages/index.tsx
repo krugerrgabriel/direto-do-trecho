@@ -10,6 +10,7 @@ import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
 import VerticalBanner from '../components/VerticalBanner';
+import FooterImage from '../components/FooterImage';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { MoreVisited } from '../styles/home';
@@ -125,6 +126,7 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
         </Row>
       </Container>
 
+      <FooterImage />
       <Footer />
     </>
   );

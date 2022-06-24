@@ -11,6 +11,7 @@ const VerticalBanner: React.FC<{ wDivider?: Boolean }> = props => {
 
   return (
     <Col lg={12}>
+      <Text> ANÚNCIO PUBLICITÁRIO </Text>
       <Body>
         <Image
           src="/vertical-banner.jpg"

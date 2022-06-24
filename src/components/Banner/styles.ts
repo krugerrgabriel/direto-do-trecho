@@ -13,8 +13,10 @@ export const Body = styled.div`
 `;
 
 export const Text = styled.h6`
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 8px;
+    font-weight: 400;
 
-    margin: 0 0 -20px 0;
+    letter-spacing: 0.8px;
+
+    margin: 0 0 -24px 0;
 `;

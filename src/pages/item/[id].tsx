@@ -20,6 +20,7 @@ import ShareButton from '../../components/ShareButton';
 import Footer from '../../components/Footer';
 import VerticalBanner from '../../components/VerticalBanner';
 import SkeletonLoader from '../../components/SkeletonLoader';
+import FooterImage from '../../components/FooterImage';
 
 import {
   Title,
@@ -106,7 +107,7 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
               <FineLine>{post.fineLine}</FineLine>
             </Box>
 
-            <BannerWrapper>
+            <BannerWrapper margin={!post.legend_file}>
               {!newsImageLoading ? <SkeletonLoader /> : null}
               <Image
                 src={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
@@ -216,6 +217,8 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           })}
         </Row>
       </Container>
+
+      <FooterImage />
 
       <Footer />
     </>
