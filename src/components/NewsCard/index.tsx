@@ -17,7 +17,7 @@ const NewsCard: React.FC<INewsCard> = props => {
   let { item } = props;
 
   return (
-    <Link href={`/item/${item.slug}`}>
+    <Link href={`/noticia/${item.slug}`}>
       <a>
         <Body type={props.type}>
           {!newsImageLoading ? <SkeletonLoader /> : null}
