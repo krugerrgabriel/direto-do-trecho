@@ -8,6 +8,7 @@ import NewsMini from '../../components/NewsMini';
 import Breadcrumb from '../../components/Breadcrumb';
 import { Divider } from '../../components/NewsItem/styles';
 import Sidebar from '../../components/Sidebar';
+import Banner from '../../components/Banner';
 
 import {
   Title,
@@ -86,8 +87,12 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
           <Col lg={4}>
             <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
-            <Sidebar posts={posts.moreVisited} />
+            <Sidebar color="black" posts={posts.moreVisited} />
           </Col>
+        </Row>
+
+        <Row className="margin-24px">
+          <Banner />
         </Row>
 
         <Divider type="half" />

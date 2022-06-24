@@ -3,23 +3,26 @@ import { Subtitle } from '../../styles/home';
 
 import NewsMini from '../NewsMini';
 
-import { IPostFetch } from '../../interfaces/IPost';
+import { ISidebar } from './interface';
 
-const Sidebar: React.FC<IPostFetch> = ({ posts }) => {
+const Sidebar: React.FC<ISidebar> = props => {
   return (
-    <Body>
-      <Subtitle> MAIS VISTOS </Subtitle>
+    <>
       {/* @ts-ignore */}
-      {posts.map((item, index) => {
-        return (
-          <div key={index}>
-            <NewsMini item={item} />
+      <Body color={props.color}>
+        <Subtitle color={props.color}> MAIS VISTOS </Subtitle>
+        {/* @ts-ignore */}
+        {props.posts.map((item, index) => {
+          return (
+            <div key={index}>
+              <NewsMini color={props.color} item={item} />
 
-            <hr />
-          </div>
-        );
-      })}
-    </Body>
+              <hr />
+            </div>
+          );
+        })}
+      </Body>
+    </>
   );
 };
 

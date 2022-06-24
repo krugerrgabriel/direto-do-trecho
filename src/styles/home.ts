@@ -8,8 +8,8 @@ export const MoreVisited = styled.div`
     padding: 118px 0 36px 0;
 `;
 
-export const Subtitle = styled.h2`
-    color: ${({ theme }) => theme.colors.gray02};
+export const Subtitle = styled.h2<{ color?: string }>`
+    color: ${({ color }) => color == 'black' ? '#fff' : '#2d2d2d'};
 
     font-size: 28px;
     font-weight: 700;

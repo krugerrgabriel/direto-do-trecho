@@ -17,5 +17,6 @@ export interface ISidebar{
                 createdAt: String
             }
         ]
-    }
+    },
+    color: string,
 }

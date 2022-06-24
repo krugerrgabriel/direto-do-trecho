@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
@@ -6,6 +8,7 @@ import NewsCard from '../components/NewsCard';
 import NewsItem from '../components/NewsItem';
 import Sidebar from '../components/Sidebar';
 import Footer from '../components/Footer';
+import Banner from '../components/Banner';
 
 import { Container, Row, Col } from 'react-bootstrap';
 import { MoreVisited } from '../styles/home';
@@ -88,21 +91,34 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
             <Row>
               {/* @ts-ignore */}
               {posts.data.map((item, index) => {
-                return (
-                  <NewsItem
-                    /* @ts-ignore */
-                    item={item}
-                    type={(index + 1) % 4 == 0 ? 'big' : 'normal'}
-                    key={index}
-                  />
-                );
+                if ((index + 1) % 4 == 0) {
+                  return (
+                    <React.Fragment key={index}>
+                      <Banner wDivider={true} />
+                      <NewsItem
+                        /* @ts-ignore */
+                        item={item}
+                        type="big"
+                      />
+                    </React.Fragment>
+                  );
+                } else {
+                  return (
+                    <NewsItem
+                      /* @ts-ignore */
+                      item={item}
+                      type="normal"
+                      key={index}
+                    />
+                  );
+                }
               })}
             </Row>
           </Col>
 
           <Col lg={4}>
             {/* @ts-ignore */}
-            <Sidebar posts={posts.moreVisited} />
+            <Sidebar color="black" posts={posts.moreVisited} />
           </Col>
         </Row>
       </Container>

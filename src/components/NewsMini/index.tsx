@@ -8,13 +8,13 @@ import { INewsCard } from '../NewsCard/interface';
 import { returnFormattedDate } from '../../functions';
 
 const NewsMini: React.FC<INewsCard> = props => {
-  let { item } = props;
+  let { item, color } = props;
 
   return (
     <>
       <Link href={`/item/${item.id}`}>
         <a className="text-decoration-none">
-          <Body type={props.type}>
+          <Body type={props.type} color={color}>
             <h3>{item.category}</h3>
             <h2>{item.title}</h2>
             <ImageWrapper type={props.type}>

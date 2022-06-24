@@ -1,19 +1,20 @@
 export interface INewsCard{
     item: {
         id: Number,
-        title: String,
-        category: String,
-        fineLine: String,
-        content: String,
-        companies: String,
-        tags: String,
-        type_file: String,
-        priority: String,
+        title: string,
+        category: string,
+        fineLine: string,
+        content: string,
+        companies: string,
+        tags: string,
+        type_file: string,
+        priority: string,
         views: Number,
         userId: Number,
-        userName: String,
-        createdAt: String
+        userName: string,
+        createdAt: string
     },
-    type?: String,
-    other?: String,
+    type?: string,
+    other?: string,
+    color?: string,
 }

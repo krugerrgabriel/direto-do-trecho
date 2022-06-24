@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Body = styled.article<{ type: String; }>`
+export const Body = styled.article<{ type: string; color?: string; }>`
     display: flex;
 
     width: 100%;
@@ -32,7 +32,7 @@ export const Body = styled.article<{ type: String; }>`
             display: flex;
 
             h4{
-                color: ${({ theme }) => theme.colors.gray02};
+                color: ${({ color }) => color == 'black' ? '#fff' : '#2d2d2d'};
 
                 font-size: 12px;
                 font-weight: 400;
@@ -50,7 +50,7 @@ export const Body = styled.article<{ type: String; }>`
         color: ${({ theme }) => theme.colors.primary};
 
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 500;
 
         text-transform: uppercase;
 
@@ -58,14 +58,12 @@ export const Body = styled.article<{ type: String; }>`
     }
 
     h2{
-        color: ${({ theme }) => theme.colors.gray02};
+        color: ${({ color }) => color == 'black' ? '#fff' : '#2d2d2d'};
 
         font-size: 16px;
-        font-weight: 700;
+        font-weight: 600;
 
         line-height: 21px;
-
-        min-height: 42px;
 
         overflow: hidden;
         display: -webkit-box;
@@ -89,6 +87,6 @@ export const ImageWrapper = styled.div<{ type: String; }>`
     position: relative;
 `;
 
-export const Divider = styled.hr`
+export const Divider = styled.hr<{ color }>`
     margin: 18px auto;
 `;
