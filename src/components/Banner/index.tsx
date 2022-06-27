@@ -32,8 +32,14 @@ const Banner: React.FC<IBanner> = props => {
 
   return (
     <Col lg={12}>
-      <Link href={banners[activeBanner].link || '#!'} passHref={true}>
-        <a className={banners[activeBanner].link ? '' : 'no-link'}>
+      <Link href={banners[activeBanner].url || '#!'} passHref={true}>
+        <a
+          className={
+            banners[activeBanner].url ? 'no-text-decoration' : 'no-link'
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Text> ANÚNCIO PUBLICITÁRIO </Text>
           <Body>
             {!newsImageLoading ? <SkeletonLoader /> : null}

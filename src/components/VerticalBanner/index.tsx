@@ -33,7 +33,13 @@ const VerticalBanner: React.FC<IVerticalBanner> = props => {
   return (
     <Col lg={12}>
       <Link href={banners[activeBanner].link || '#!'} passHref={true}>
-        <a className={banners[activeBanner].link ? '' : 'no-link'}>
+        <a
+          className={
+            banners[activeBanner].link ? 'no-text-decoration' : 'no-link'
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Text> ANÚNCIO PUBLICITÁRIO </Text>
           <Body>
             {!newsImageLoading ? <SkeletonLoader /> : null}
