@@ -88,7 +88,14 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         <meta property="og:type" content="article" />
         <meta name="keywords" content={post.tags.replaceAll(';', ', ')} />
         <meta property="article:published_time" content={post.createdAt} />
-        <meta property="article:tag" content={post.companies} />
+        <meta
+          property="article:tag"
+          content={
+            post.tags.replaceAll(';', ', ') +
+            ', ' +
+            post.companies.replaceAll(';', ', ')
+          }
+        />
         <meta property="og:locale" content="pt_BR" />
         {/* @ts-ignore */}
         <meta name="twitter:card" value="summary" />
