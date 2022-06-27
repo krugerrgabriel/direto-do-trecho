@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Body = styled.div`
     position: relative;
 
-    aspect-ratio: 6/9;
+    aspect-ratio: 9/16;
     height: auto;
     width: 100%;
 

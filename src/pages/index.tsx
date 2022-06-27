@@ -18,7 +18,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { MoreVisited } from '../styles/home';
 import { IPostFetch } from '../interfaces/IPost';
 
-const Home: React.FC<IPostFetch> = ({ posts }) => {
+const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
   const [count, setCount] = useState({
     prev: 0,
     next: 10
@@ -156,7 +156,8 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
           <Col lg={4} className="hide-992px">
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
-            <VerticalBanner />
+            {/* @ts-ignore */}
+            <VerticalBanner banners={banners.vertical} />
           </Col>
         </Row>
       </Container>
@@ -168,7 +169,7 @@ const Home: React.FC<IPostFetch> = ({ posts }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(
+  const resPosts = await fetch(
     'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/news/get.php',
     {
       method: 'POST',
@@ -186,11 +187,17 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     }
   );
-  const posts = await res.json();
+  const posts = await resPosts.json();
+
+  const resBanners = await fetch(
+    'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/banners/get?type=all'
+  );
+  const banners = await resBanners.json();
 
   return {
     props: {
-      posts
+      posts,
+      banners
     },
     revalidate: 43200
   };

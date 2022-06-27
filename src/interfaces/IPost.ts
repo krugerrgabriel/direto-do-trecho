@@ -58,4 +58,20 @@ export interface IPostFetch{
             }
         ]
     }
+    banners: {
+        vertical: {
+            title: string,
+            type: string,
+            url: string,
+            userId: number,
+            createdAt: string
+        },
+        horizontal: {
+            title: string,
+            type: string,
+            url: string,
+            userId: number,
+            createdAt: string
+        }
+    }
 }
