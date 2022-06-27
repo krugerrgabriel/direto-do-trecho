@@ -79,7 +79,10 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
           property="og:description"
           content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
         />
-        <meta property="og:image" content="/logo02.jpg" />
+        <meta
+          property="og:image"
+          content="https://diretodotrecho.com.br/logo02.jpg"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
