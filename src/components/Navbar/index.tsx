@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <>
       <Body>
-        <Container className="d-flex align-items-center justify-content-between h-100">
+        <Container className="d-flex align-items-center justify-content-center h-100">
           <Row className="w-100">
-            <Col lg={3} className="d-flex justify-768px-center">
+            <Col lg={12} className="d-flex justify-content-center">
               <Link href="/">
                 <a>
                   <LogoWrapper>

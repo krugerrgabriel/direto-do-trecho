@@ -119,14 +119,14 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Col lg={8}>
             <Row>
               <InfiniteScroll
-                dataLength={posts.data.length} //This is important field to render the next data
+                dataLength={posts.data.length - 5} //This is important field to render the next data
                 next={getMoreData}
                 hasMore={true}
                 loader={''}
               >
                 {/* @ts-ignore */}
                 {current &&
-                  current.map((item, index) => {
+                  current.slice(5).map((item, index) => {
                     if ((index + 1) % 4 == 0) {
                       return (
                         <React.Fragment key={index}>

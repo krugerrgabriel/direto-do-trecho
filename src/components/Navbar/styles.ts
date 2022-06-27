@@ -6,7 +6,7 @@ export const Body = styled.div`
     -webkit-backdrop-filter: blur(8px);
 
     width: 100vw;
-    height: 102px;
+    height: 138px;
     
     position: fixed;
     top: 0;
@@ -19,7 +19,7 @@ export const Body = styled.div`
     z-index: 500;
 
     @media (max-width: 768px) {
-        height: 92px;
+        height: 108px;
     }
 `;
 
@@ -27,13 +27,13 @@ export const LogoWrapper = styled.div`
     position: relative;
 
     aspect-ratio: 255/61;
-    width: 255px;
+    width: 340px;
     height: auto;
 
     cursor: pointer;
 
     @media (max-width: 768px) {
-        width: 225px;
+        width: 275px;
     }
 `;
 

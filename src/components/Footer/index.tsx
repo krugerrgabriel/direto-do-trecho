@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     <Body>
       <Container>
         <Row className="justify-content-between justify-768px-center">
-          <Col xl={2} lg={3} md={4} sm={6} xs={12}>
+          <Col xl={3} lg={4} md={5} sm={7} xs={12}>
             <LogoWrapper>
               <Image
                 src="/logo01.svg"
@@ -47,8 +47,8 @@ const Footer: React.FC = () => {
 
           <Col
             xl={4}
-            lg={5}
-            md={4}
+            lg={4}
+            md={3}
             sm={12}
             xs={12}
             className="d-flex align-items-center justify-content-end justify-768px-center"
