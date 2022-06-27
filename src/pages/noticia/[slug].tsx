@@ -42,7 +42,7 @@ import { returnFormattedDate } from '../../functions';
 import 'froala-editor/css/froala_style.min.css';
 import 'font-awesome/css/font-awesome.css';
 
-const Item: React.FC<IPostFetch> = ({ posts }) => {
+const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
   const pageRef = useRef();
   const [height, setHeight] = useState(0);
 
@@ -135,7 +135,8 @@ const Item: React.FC<IPostFetch> = ({ posts }) => {
             <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
-            {height >= 1900 ? <VerticalBanner /> : ''}
+            {/* @ts-ignore */}
+            {height >= 1900 ? <VerticalBanner banners={banners} /> : ''}
           </Col>
         </Row>
 
@@ -246,7 +247,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async context => {
   const { slug } = context.params;
 
-  const res = await fetch(
+  const resPosts = await fetch(
     'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/news/get.php',
     {
       method: 'POST',
@@ -263,11 +264,17 @@ export const getStaticProps: GetStaticProps = async context => {
       })
     }
   );
-  const posts = await res.json();
+  const posts = await resPosts.json();
+
+  const resBanners = await fetch(
+    'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/banners/get?type=all'
+  );
+  const banners = await resBanners.json();
 
   return {
     props: {
-      posts
+      posts,
+      banners
     }
   };
 };
