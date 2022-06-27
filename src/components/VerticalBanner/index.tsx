@@ -41,7 +41,7 @@ const VerticalBanner: React.FC<IVerticalBanner> = props => {
           rel="noopener noreferrer"
         >
           <Text> ANÚNCIO PUBLICITÁRIO </Text>
-          <Body>
+          <Body title={banners[activeBanner].title}>
             {!newsImageLoading ? <SkeletonLoader /> : null}
             <Image
               src={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners[activeBanner].id}.jpg`}
