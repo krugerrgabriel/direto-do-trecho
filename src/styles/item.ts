@@ -4,10 +4,10 @@ export const NavbarPadding = styled.div`
     background-color: rgba(0, 0, 0, 0.85);
 
     width: 100vw;
-    height: 82px;
+    height: 138px;
 
     @media(max-width: 768px){
-        height: 64px;
+        height: 108px;
     }
 `;
 
