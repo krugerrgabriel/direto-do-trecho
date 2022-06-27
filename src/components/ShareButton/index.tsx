@@ -27,7 +27,7 @@ const ShareButton: React.FC<{ type: string; text: string }> = ({
       <div className={`iconWrapper ${type}`}>
         <Image
           src={`/${type}-icon.svg`}
-          alt="Logo da Segtruck"
+          alt={`Compartilhar o Direto do Trecho no ${type.toUpperCase()}`}
           layout="fill"
           objectFit="contain"
         />

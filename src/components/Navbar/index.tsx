@@ -16,7 +16,7 @@ const Navbar = () => {
                   <LogoWrapper>
                     <Image
                       src="/logo01.svg"
-                      alt="Logo da Segtruck"
+                      alt="Logo do Direto do Trecho"
                       layout="fill"
                       objectFit="contain"
                     />

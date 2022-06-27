@@ -16,7 +16,7 @@ const Sidebar: React.FC<ISidebar> = props => {
           <div>
             <Image
               src="/curva-acentuadax250.png"
-              alt="Logo da Segtruck"
+              alt="Placa de Curva Acentuada no Direto do Trecho"
               layout="fill"
               objectFit="contain"
             />

@@ -23,7 +23,7 @@ const NewsCard: React.FC<INewsCard> = props => {
           {!newsImageLoading ? <SkeletonLoader /> : null}
           <Image
             src={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${item.id}_thumb.jpg`}
-            alt="Imagem da Notícia"
+            alt={item.title}
             layout="fill"
             objectFit="cover"
             onLoad={() => setNewsImageLoading(true)}

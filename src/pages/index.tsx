@@ -51,23 +51,29 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
 
         <meta
           name="description"
-          content="Blog desenvolvido para centralizar as notícias do Grupo UNUS"
+          content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
         />
+        <meta name="og:site_name" content="Direto do Trecho" />
         <meta property="og:title" content="Direto do Trecho" />
-        <meta
-          property="og:url"
-          content={`https://direto-do-trecho.vercel.app`}
-        />
+        <meta property="og:url" content={`https://direto-do-trecho.com.br/`} />
         <meta
           property="og:description"
-          content="Blog desenvolvido para centralizar as notícias do Grupo UNUS"
+          content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
         />
-        <meta
-          property="og:image"
-          content={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/2_thumb.jpg`}
-        />
+        <meta property="og:image" content="/logo02.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="blog" />
         <meta property="og:locale" content="pt_BR" />
+        {/* @ts-ignore */}
+        <meta name="twitter:card" value="summary" />
+        <meta name="twitter:site" content="@krugerrgabriel" />
+        <meta name="twitter:title" content="Direto do Trecho" />
+        <meta
+          name="twitter:description"
+          content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
+        />
+        <meta name="twitter:creator" content="@krugerrgabriel" />
       </Head>
 
       <Navbar />

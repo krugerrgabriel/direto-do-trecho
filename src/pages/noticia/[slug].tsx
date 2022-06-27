@@ -69,13 +69,15 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         />
         <meta
           property="og:url"
-          content={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
+          content={`https://direto-do-trecho.com.br/noticia/${post.slug}`}
         />
         <meta property="og:description" content={post.fineLine} />
         <meta
           property="og:image"
           content={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.createdAt} />
         <meta property="article:tag" content={post.companies} />
@@ -111,7 +113,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
               {!newsImageLoading ? <SkeletonLoader /> : null}
               <Image
                 src={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_thumb.jpg`}
-                alt="Imagem da Notícia"
+                alt={post.title}
                 layout="fill"
                 objectFit="cover"
                 onLoad={() => setNewsImageLoading(true)}
@@ -207,7 +209,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
               <div>
                 <Image
                   src="/mao-dupla-adiantex250.png"
-                  alt="Logo da Segtruck"
+                  alt="Placa de Mão Dupla Adiante no Direto do Trecho"
                   layout="fill"
                   objectFit="contain"
                 />
