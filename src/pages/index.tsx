@@ -55,7 +55,7 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
         />
         <meta name="og:site_name" content="Direto do Trecho" />
         <meta property="og:title" content="Direto do Trecho" />
-        <meta property="og:url" content={`https://direto-do-trecho.com.br/`} />
+        <meta property="og:url" content={`https://diretodotrecho.com.br/`} />
         <meta
           property="og:description"
           content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"

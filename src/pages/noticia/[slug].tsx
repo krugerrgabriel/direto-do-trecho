@@ -69,7 +69,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         />
         <meta
           property="og:url"
-          content={`https://direto-do-trecho.com.br/noticia/${post.slug}`}
+          content={`https://diretodotrecho.com.br/noticia/${post.slug}`}
         />
         <meta property="og:description" content={post.fineLine} />
         <meta
@@ -149,7 +149,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         <Row className="margin-24px">
           <Col lg={3} md={6} sm={12} xs={12}>
             <FacebookShareButton
-              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
+              url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               quote={post.title}
               hashtag={`#diretodotrecho`} // @ts-ignore
               description={post.fineLine}
@@ -162,7 +162,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Col lg={3} md={6} sm={12} xs={12}>
             <TwitterShareButton
               title={'Confira esse artigo do Direto do Trecho: ' + post.title}
-              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
+              url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               hashtags={['diretodotrecho']} // @ts-ignore
               className="w-100"
             >
@@ -173,7 +173,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Col lg={3} md={6} sm={12} xs={12}>
             <WhatsappShareButton
               title={'Confira esse artigo do Direto do Trecho: ' + post.title}
-              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
+              url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               separator=" - "
               className="w-100"
             >
@@ -184,7 +184,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Col lg={3} md={6} sm={12} xs={12}>
             <TelegramShareButton
               title={'Confira esse artigo do Direto do Trecho: ' + post.title}
-              url={`https://direto-do-trecho.vercel.app/item/${post.slug}`}
+              url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               className="w-100"
             >
               <ShareButton type="telegram" text="ENCAMINHAR" />
