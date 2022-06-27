@@ -58,14 +58,10 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
           content="caminhoneiros, caminhoneiro, notícias, diário, dia-a-dia"
         />
         <meta
-          name="og:site_name"
-          content="Direto do Trecho - O Diário do Caminhoneiro"
-        />
-        <meta
           property="og:title"
           content="Direto do Trecho - O Diário do Caminhoneiro"
         />
-        <meta property="og:url" content={`https://diretodotrecho.com.br/`} />
+        <meta property="og:url" content="https://diretodotrecho.com.br/" />
         <meta
           property="og:description"
           content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
@@ -73,8 +69,11 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
         <meta property="og:image" content="/logo02.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content="Direto do Trecho - O Diário do Caminhoneiro"
+        />
         <meta property="og:type" content="blog" />
-        <meta property="og:locale" content="pt_BR" />
         {/* @ts-ignore */}
         <meta name="twitter:card" value="summary" />
         <meta name="twitter:site" content="@krugerrgabriel" />

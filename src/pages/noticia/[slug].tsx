@@ -65,10 +65,6 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
 
         <meta name="description" content={post.fineLine} />
         <meta
-          name="og:site_name"
-          content="Direto do Trecho - O Diário do Caminhoneiro"
-        />
-        <meta
           property="og:title"
           content={
             post.title + ' | Direto do Trecho - O Diário do Caminhoneiro'
@@ -85,6 +81,10 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content={`${post.title} | Direto do Trecho - O Diário do Caminhoneiro`}
+        />
         <meta property="og:type" content="article" />
         <meta name="keywords" content={post.tags.replaceAll(';', ', ')} />
         <meta property="article:published_time" content={post.createdAt} />
@@ -96,11 +96,13 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
             post.companies.replaceAll(';', ', ')
           }
         />
-        <meta property="og:locale" content="pt_BR" />
         {/* @ts-ignore */}
         <meta name="twitter:card" value="summary" />
         <meta name="twitter:site" content="@krugerrgabriel" />
-        <meta name="twitter:title" content={post.title} />
+        <meta
+          name="twitter:title"
+          content={post.title + '| Direto do Trecho - O Diário do Caminhoneiro'}
+        />
         <meta name="twitter:description" content={post.fineLine} />
         <meta name="twitter:creator" content="@krugerrgabriel" />
       </Head>
