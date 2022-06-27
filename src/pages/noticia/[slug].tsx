@@ -195,7 +195,11 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Banner banners={banners.horizontal} />
         </Row>
 
-        <Divider type="half" />
+        <Row>
+          <Col lg={12}>
+            <Divider type="half" />
+          </Col>
+        </Row>
 
         <Row className="margin-36px">
           <Col lg={12} className="position-relative">
@@ -280,7 +284,8 @@ export const getStaticProps: GetStaticProps = async context => {
     props: {
       posts,
       banners
-    }
+    },
+    revalidate: 43200
   };
 };
 

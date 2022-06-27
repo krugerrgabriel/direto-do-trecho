@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 
 export const Body = styled.div`
     position: relative;
@@ -13,6 +13,8 @@ export const Body = styled.div`
 `;
 
 export const Text = styled.h6`
+    color: ${({ theme }) => theme.colors.gray04};
+    
     font-size: 8px;
     font-weight: 400;
 

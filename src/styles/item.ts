@@ -96,8 +96,9 @@ export const Date = styled.h4`
 export const BannerWrapper = styled.div<{ margin: boolean }>`
     position: relative;
 
+    aspect-ratio: 16/9;
     width: 100%;
-    height: 400px;
+    height: auto;
 
     margin: 24px 0 ${({ margin }) => margin ? '24px' : '0'} 0;
 `;

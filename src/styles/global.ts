@@ -38,6 +38,12 @@ export default createGlobalStyle`
         text-decoration: none;
     }
 
+    a.no-link{
+        cursor: default;
+
+        text-decoration: none;
+    }
+
     @media(max-width: 992px){
         .margin-36px-992px{
             margin: 36px 0 0 0;

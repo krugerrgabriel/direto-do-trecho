@@ -13,10 +13,12 @@ export const Body = styled.div`
 `;
 
 export const Text = styled.h6`
+    color: ${({ theme }) => theme.colors.gray04};
+
     font-size: 8px;
     font-weight: 400;
 
     letter-spacing: 0.8px;
 
-    margin: 18px 0 -20px 12px;
+    margin: 18px 0 -22px 12px;
 `;

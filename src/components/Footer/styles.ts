@@ -64,4 +64,18 @@ export const Sitemap = styled.div`
 
         margin: 1px 0;
     }
+
+    @media (max-width: 768px) {
+        margin: 24px 0;
+
+        h2{
+            font-size: 20px;
+        }
+
+        a{
+            font-size: 16px;
+
+            margin: 3px 0;
+        }
+    }
 `;

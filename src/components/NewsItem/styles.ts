@@ -79,6 +79,14 @@ export const Body = styled.article<{ type: String; }>`
         }
     }
 
+    @media(max-width: 1400px){
+        flex-direction: column;
+
+        div.info{
+            margin: 16px 0 0 0;
+        }
+    }
+
     @media(max-width: 1200px) {
         h3{
             ${({ type }) => type == 'normal' ? 'font-size: 13px;' : ''};
@@ -142,12 +150,6 @@ export const Body = styled.article<{ type: String; }>`
     }
 
     @media(max-width: 575px) {
-        flex-direction: column;
-
-        div.info{
-            margin: 0;
-        }
-
         h3{
             font-size: ${({ type }) => type == 'normal' ? '13px' : '14px'};
 
@@ -171,32 +173,15 @@ export const Body = styled.article<{ type: String; }>`
 `;
 
 export const ImageWrapper = styled.div<{ type: String; }>`
-    aspect-ratio: ${({ type }) => type == 'normal' ? '11/9' : '107/50'};
+    aspect-ratio: 16/9;
 
-    width: ${({ type }) => type == 'normal' ? '275px' : '100%'};
     height: ${({ type }) => type == 'normal' ? '225px' : '400px'};
+    width: 100%;
 
     position: relative;
 
-    @media(max-width: 1200px) {
-        width: ${({ type }) => type == 'normal' ? '235px' : '100%'};
-    }
-
-    @media(max-width: 992px) {
-        ${({ type }) => type == 'normal' ? '' : 'aspect-ratio: 16/9;'};
-        width: ${({ type }) => type == 'normal' ? '225px' : '100%'};
-    }
-
-    @media(max-width: 768px) {
-        width: ${({ type }) => type == 'normal' ? '200px' : '100%'};
-    }
-
-    @media(max-width: 576px) {
-        height: 275px;
-        aspect-ratio: 16/9;
-        width: 100%;
-
-        margin: 0 0 12px 0;
+    @media(max-width: 1400px){
+        height: auto;
     }
 `;
 

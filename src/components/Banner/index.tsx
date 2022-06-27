@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { Col } from 'react-bootstrap';
 
 import Image from 'next/image';
+import Link from 'next/link';
+
+import SkeletonLoader from '../../components/SkeletonLoader';
 
 import { Divider } from '../NewsItem/styles';
 
@@ -25,17 +28,25 @@ const Banner: React.FC<IBanner> = props => {
     setActiveBanner(Math.floor(Math.random() * len));
   };
 
+  const [newsImageLoading, setNewsImageLoading] = useState(false);
+
   return (
     <Col lg={12}>
-      <Text> ANÚNCIO PUBLICITÁRIO </Text>
-      <Body>
-        <Image
-          src={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners[activeBanner].id}.jpg`}
-          alt={banners[activeBanner].title}
-          layout="fill"
-          objectFit="cover"
-        />
-      </Body>
+      <Link href={banners[activeBanner].link || '#!'} passHref={true}>
+        <a className={banners[activeBanner].link ? '' : 'no-link'}>
+          <Text> ANÚNCIO PUBLICITÁRIO </Text>
+          <Body>
+            {!newsImageLoading ? <SkeletonLoader /> : null}
+            <Image
+              src={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners[activeBanner].id}.jpg`}
+              alt={banners[activeBanner].title}
+              layout="fill"
+              objectFit="cover"
+              onLoad={() => setNewsImageLoading(true)}
+            />
+          </Body>
+        </a>
+      </Link>
 
       {wDivider ? <Divider /> : null}
     </Col>

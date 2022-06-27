@@ -76,13 +76,17 @@ export const Body = styled.article<{ type: string; color?: string; }>`
             text-decoration: underline;
         }
     }
+
+    @media (max-width: 768px){
+        margin: 0 0 24px 0;
+    }
 `;
 
 export const ImageWrapper = styled.div<{ type: String; }>`
-    aspect-ratio: 52/25;
+    aspect-ratio: 16/9;
 
     width: 100%;
-    height: 200px;
+    height: auto;
 
     position: relative;
 `;
