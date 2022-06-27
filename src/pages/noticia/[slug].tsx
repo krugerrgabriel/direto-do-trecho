@@ -59,7 +59,9 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
   return (
     <>
       <Head>
-        <title>{post.title} | Direto do Trecho</title>
+        <title>
+          {post.title} | Direto do Trecho - O Diário do Caminhoneiro
+        </title>
 
         <meta name="description" content={post.fineLine} />
         <meta
