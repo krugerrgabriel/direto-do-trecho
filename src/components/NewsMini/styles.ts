@@ -63,6 +63,8 @@ export const Body = styled.article<{ type: string; color?: string; }>`
         font-size: 16px;
         font-weight: 600;
 
+        text-transform: uppercase;
+
         line-height: 21px;
 
         overflow: hidden;

@@ -37,6 +37,8 @@ export const Body = styled.article<{ type: String; }>`
         font-size: ${({ type }) => type == 'MoreVisited-ExtraLarge' ? '32px' : '16px'};
         font-weight: 700;
 
+        text-transform: uppercase;
+
         line-height: ${({ type }) => type == 'MoreVisited-ExtraLarge' ? '42px' : '24px'};
 
         margin: 0;

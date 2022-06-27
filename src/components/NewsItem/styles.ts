@@ -63,6 +63,8 @@ export const Body = styled.article<{ type: String; }>`
         font-size: ${({ type }) => type == 'normal' ? '24px' : '28px'};
         font-weight: 700;
 
+        text-transform: uppercase;
+
         line-height: ${({ type }) => type == 'normal' ? '30px' : '36px'};
 
         margin: ${({ type }) => type == 'normal' ? '0' : '0 0 8px 0'};
