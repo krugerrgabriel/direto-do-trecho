@@ -43,17 +43,6 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-          <meta
-            name="og:site_name"
-            content="Direto do Trecho - O Diário do Caminhoneiro"
-          />
-          <meta name="author" content="Gabriel Sabara Krüger" />
-          <link rel="canonical" href="https://diretodotrecho.com.br/" />
-          <meta property="og:locale" content="pt_BR" />
-          <meta property="locale" content="pt_BR" />
-          <meta name="robots" content="index, follow" />
-          <meta name="googlebot" content="index, follow" />
-          <meta name="viewport" content="width=device-width" />
 
           <link
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"

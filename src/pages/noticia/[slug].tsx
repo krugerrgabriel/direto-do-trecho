@@ -63,6 +63,17 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
           {post.title} | Direto do Trecho - O Diário do Caminhoneiro
         </title>
 
+        <meta
+          name="og:site_name"
+          content="Direto do Trecho - O Diário do Caminhoneiro"
+        />
+        <meta name="author" content="Gabriel Sabara Krüger" />
+        <link rel="canonical" href="https://diretodotrecho.com.br/" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="locale" content="pt_BR" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="viewport" content="width=device-width" />
         <meta name="description" content={post.fineLine} />
         <meta
           property="og:title"

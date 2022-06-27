@@ -52,6 +52,17 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
         <title> Direto do Trecho - O Diário do Caminhoneiro </title>
 
         <meta
+          name="og:site_name"
+          content="Direto do Trecho - O Diário do Caminhoneiro"
+        />
+        <meta name="author" content="Gabriel Sabara Krüger" />
+        <link rel="canonical" href="https://diretodotrecho.com.br/" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="locale" content="pt_BR" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="viewport" content="width=device-width" />
+        <meta
           name="description"
           content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
         />
@@ -88,6 +99,27 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
           content="Blog desenvolvido para centralizar as principais notícias do Grupo UNUS e do mundo do caminhoneiro"
         />
         <meta name="twitter:creator" content="@krugerrgabriel" />
+
+        {
+          // @ts-ignore
+          banners.vertical.map(banner => {
+            <link
+              rel="preload"
+              as="image" // @ts-ignore
+              href={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners.id}.jpg`}
+            />;
+          })
+        }
+        {
+          // @ts-ignore
+          banners.horizontal.map(banner => {
+            <link
+              rel="preload"
+              as="image" // @ts-ignore
+              href={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners.id}.jpg`}
+            />;
+          })
+        }
       </Head>
 
       <Navbar />
