@@ -27,13 +27,13 @@ export const LogoWrapper = styled.div`
     position: relative;
 
     aspect-ratio: 255/61;
-    width: 340px;
+    width: 400px;
     height: auto;
 
     cursor: pointer;
 
     @media (max-width: 768px) {
-        width: 275px;
+        width: 325px;
     }
 `;
 
