@@ -32,10 +32,10 @@ const VerticalBanner: React.FC<IVerticalBanner> = props => {
 
   return (
     <Col lg={12}>
-      <Link href={banners[activeBanner].link || '#!'} passHref={true}>
+      <Link href={banners[activeBanner].url || '#!'} passHref={true}>
         <a
           className={
-            banners[activeBanner].link ? 'no-text-decoration' : 'no-link'
+            banners[activeBanner].url ? 'no-text-decoration' : 'no-link'
           }
           target="_blank"
           rel="noopener noreferrer"
