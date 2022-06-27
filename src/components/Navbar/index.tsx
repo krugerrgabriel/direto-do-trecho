@@ -10,7 +10,7 @@ const Navbar = () => {
       <Body>
         <Container className="d-flex align-items-center justify-content-between h-100">
           <Row className="w-100">
-            <Col lg={3}>
+            <Col lg={3} className="d-flex justify-768px-center">
               <Link href="/">
                 <a>
                   <LogoWrapper>

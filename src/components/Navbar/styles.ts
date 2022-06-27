@@ -14,24 +14,26 @@ export const Body = styled.div`
 
     border-bottom: 6px solid ${({ theme }) => theme.colors.primary};
 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.075);
+
     z-index: 500;
 
     @media (max-width: 768px) {
-        height: 70px;
+        height: 92px;
     }
 `;
 
 export const LogoWrapper = styled.div`
     position: relative;
 
-    aspect-ratio: 25/6;
-    width: 175px;
+    aspect-ratio: 255/61;
+    width: 255px;
     height: auto;
 
     cursor: pointer;
 
     @media (max-width: 768px) {
-        width: 125px;
+        width: 225px;
     }
 `;
 

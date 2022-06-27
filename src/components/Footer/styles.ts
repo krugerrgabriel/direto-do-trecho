@@ -34,8 +34,6 @@ export const LogoWrapper = styled.div`
     width: 100%;
     height: 100%;
 
-    opacity: 0.75;
-
     @media (max-width: 576px) {
         width: 75%;
 
