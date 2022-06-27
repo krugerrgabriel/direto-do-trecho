@@ -136,7 +136,11 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.moreVisited} />
             {/* @ts-ignore */}
-            {height >= 1900 ? <VerticalBanner banners={banners} /> : ''}
+            {height >= 1900 ? (
+              <VerticalBanner banners={banners.vertical} />
+            ) : (
+              ''
+            )}
           </Col>
         </Row>
 
@@ -187,7 +191,8 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         </Row>
 
         <Row className="margin-24px">
-          <Banner />
+          {/* @ts-ignore */}
+          <Banner banners={banners.horizontal} />
         </Row>
 
         <Divider type="half" />

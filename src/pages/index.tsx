@@ -130,7 +130,10 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
                     if ((index + 1) % 4 == 0) {
                       return (
                         <React.Fragment key={index}>
-                          <Banner wDivider={true} />
+                          <Banner
+                            wDivider={true} // @ts-ignore
+                            banners={banners.horizontal}
+                          />
                           <NewsItem
                             /* @ts-ignore */
                             item={item}
