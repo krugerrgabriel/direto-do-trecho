@@ -8,7 +8,7 @@ const FooterImage: React.FC = () => {
       <div>
         <Image
           src="/footer-image.jpg"
-          alt="Logo do Direto no Trecho"
+          alt="Logo do Direto no Trecho - O Diário do Caminhoneiro"
           layout="fill"
           objectFit="contain"
         />

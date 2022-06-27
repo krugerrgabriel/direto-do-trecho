@@ -62,10 +62,15 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         <title>{post.title} | Direto do Trecho</title>
 
         <meta name="description" content={post.fineLine} />
-        <meta name="og:site_name" content="Direto do Trecho" />
+        <meta
+          name="og:site_name"
+          content="Direto do Trecho - O Diário do Caminhoneiro"
+        />
         <meta
           property="og:title"
-          content={post.title + ' | Direto do Trecho'}
+          content={
+            post.title + ' | Direto do Trecho - O Diário do Caminhoneiro'
+          }
         />
         <meta
           property="og:url"
@@ -79,6 +84,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="article" />
+        <meta name="keywords" content={post.tags.replaceAll(';', ', ')} />
         <meta property="article:published_time" content={post.createdAt} />
         <meta property="article:tag" content={post.companies} />
         <meta property="og:locale" content="pt_BR" />
@@ -161,7 +167,10 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
 
           <Col lg={3} md={6} sm={12} xs={12}>
             <TwitterShareButton
-              title={'Confira esse artigo do Direto do Trecho: ' + post.title}
+              title={
+                'Confira esse artigo do Direto do Trecho - O Diário do Caminhoneiro: ' +
+                post.title
+              }
               url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               hashtags={['diretodotrecho']} // @ts-ignore
               className="w-100"
@@ -172,7 +181,10 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
 
           <Col lg={3} md={6} sm={12} xs={12}>
             <WhatsappShareButton
-              title={'Confira esse artigo do Direto do Trecho: ' + post.title}
+              title={
+                'Confira esse artigo do Direto do Trecho - O Diário do Caminhoneiro: ' +
+                post.title
+              }
               url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               separator=" - "
               className="w-100"
@@ -183,7 +195,10 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
 
           <Col lg={3} md={6} sm={12} xs={12}>
             <TelegramShareButton
-              title={'Confira esse artigo do Direto do Trecho: ' + post.title}
+              title={
+                'Confira esse artigo do Direto do Trecho - O Diário do Caminhoneiro: ' +
+                post.title
+              }
               url={`https://diretodotrecho.com.br/noticia/${post.slug}`}
               className="w-100"
             >
@@ -209,7 +224,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
               <div>
                 <Image
                   src="/mao-dupla-adiantex250.png"
-                  alt="Placa de Mão Dupla Adiante no Direto do Trecho"
+                  alt="Placa de Mão Dupla Adiante no Direto do Trecho - O Diário do Caminhoneiro"
                   layout="fill"
                   objectFit="contain"
                 />

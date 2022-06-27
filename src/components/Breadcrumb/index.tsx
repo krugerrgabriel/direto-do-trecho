@@ -14,7 +14,7 @@ const Breadcrumb: React.FC<{ itemName: String; itemId: Number }> = props => {
         <ArrowWrapper>
           <Image
             src="/right-arrow.svg"
-            alt="Seta para a direita do Direto do Trecho"
+            alt="Seta para a direita do Direto do Trecho - O Diário do Caminhoneiro"
             layout="fill"
             objectFit="cover"
           />

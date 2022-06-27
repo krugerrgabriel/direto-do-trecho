@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
             <LogoWrapper>
               <Image
                 src="/logo01.svg"
-                alt="Logo do Direto do Trecho"
+                alt="Logo do Direto do Trecho - O Diário do Caminhoneiro"
                 layout="fill"
                 objectFit="contain"
               />

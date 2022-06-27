@@ -51,7 +51,15 @@ export default class MyDocument extends Document {
 
           <link
             rel="icon"
-            href="https://segtruck.com.br/assets/img/icons/segtruck-favicon.svg"
+            type="image/svg"
+            href="/favicon-dark.svg"
+            media="(prefers-color-scheme: dark)"
+          />
+          <link
+            rel="icon"
+            type="image/svg"
+            href="/favicon-light.svg"
+            media="(prefers-color-scheme: light)"
           />
         </Head>
         <body>
