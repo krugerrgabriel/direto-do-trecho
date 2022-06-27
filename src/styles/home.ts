@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const MoreVisited = styled.div`
     background-color: rgba(0, 0, 0, 0.85);
 
-    border-bottom: 6px solid ${({ theme }) => theme.colors.primary};
-
     padding: 186px 0 36px 0;
 
     @media(max-width: 768px){

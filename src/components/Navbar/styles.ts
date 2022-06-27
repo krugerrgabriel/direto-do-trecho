@@ -12,7 +12,7 @@ export const Body = styled.div`
     top: 0;
     left: 0;
 
-    border-bottom: 6px solid ${({ theme }) => theme.colors.primary};
+    border-bottom: 3px solid ${({ theme }) => theme.colors.primary};
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.075);
 
