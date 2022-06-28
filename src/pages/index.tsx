@@ -21,23 +21,46 @@ import { MoreVisited } from '../styles/home';
 import { IPostFetch } from '../interfaces/IPost';
 
 const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
+  let itemsArray = posts.data;
+
+  if (posts.order1 == '0') {
+    posts.order1 = itemsArray[0];
+    itemsArray.slice();
+  }
+  if (posts.order2 == '0') {
+    posts.order2 = itemsArray[0];
+    itemsArray.slice();
+  }
+  if (posts.order3 == '0') {
+    posts.order3 = itemsArray[0];
+    itemsArray.slice();
+  }
+  if (posts.order4 == '0') {
+    posts.order4 = itemsArray[0];
+    itemsArray.slice();
+  }
+  if (posts.order5 == '0') {
+    posts.order5 = itemsArray[0];
+    itemsArray.slice();
+  }
+
   const [count, setCount] = useState({
     prev: 0,
     next: 10
   });
   const [current, setCurrent] = useState(
-    posts.data.slice(count.prev, count.next)
+    itemsArray.slice(count.prev, count.next)
   );
   const [hasMore, setHasMore] = useState(true);
 
   const getMoreData = () => {
-    if (current.length === posts.data.length) {
+    if (current.length === itemsArray.length) {
       setHasMore(false);
       return;
     }
     setTimeout(() => {
       setCurrent(
-        current.concat(posts.data.slice(count.prev + 10, count.next + 10))
+        current.concat(itemsArray.slice(count.prev + 10, count.next + 10))
       );
     }, 2000);
     setCount(prevState => ({
@@ -132,7 +155,7 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Row>
             <Col lg={6} md={6} sm={12} xs={12}>
               {/* @ts-ignore */}
-              <NewsCard item={posts.data[0]} type="MoreVisited-ExtraLarge" />
+              <NewsCard item={posts.order1} type="MoreVisited-ExtraLarge" />
             </Col>
 
             <Col
@@ -146,22 +169,22 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
               <Row>
                 <Col xs={6}>
                   {/* @ts-ignore */}
-                  <NewsCard item={posts.data[1]} type="MoreVisited-Normal" />
+                  <NewsCard item={posts.order2} type="MoreVisited-Normal" />
                 </Col>
                 <Col xs={6}>
                   {/* @ts-ignore */}
-                  <NewsCard item={posts.data[2]} type="MoreVisited-Normal" />
+                  <NewsCard item={posts.order3} type="MoreVisited-Normal" />
                 </Col>
               </Row>
               <div className="margin-24px-768px"></div>
               <Row>
                 <Col xs={6}>
                   {/* @ts-ignore */}
-                  <NewsCard item={posts.data[3]} type="MoreVisited-Normal" />
+                  <NewsCard item={posts.order4} type="MoreVisited-Normal" />
                 </Col>
                 <Col xs={6}>
                   {/* @ts-ignore */}
-                  <NewsCard item={posts.data[4]} type="MoreVisited-Normal" />
+                  <NewsCard item={posts.order5} type="MoreVisited-Normal" />
                 </Col>
               </Row>
             </Col>
@@ -181,7 +204,7 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
               >
                 {/* @ts-ignore */}
                 {current &&
-                  current.slice(5).map((item, index) => {
+                  current.map((item, index) => {
                     if ((index + 1) % 4 == 0) {
                       return (
                         <React.Fragment key={index}>

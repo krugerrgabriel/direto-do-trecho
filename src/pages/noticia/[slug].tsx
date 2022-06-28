@@ -280,7 +280,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
   const posts = await res.json();
 
-  const paths = posts.data.map(item => {
+  const allItems = posts.data;
+  if (posts.order1 != '0') {
+    allItems.push(posts.order1);
+  }
+  if (posts.order2 != '0') {
+    allItems.push(posts.order2);
+  }
+  if (posts.order3 != '0') {
+    allItems.push(posts.order3);
+  }
+  if (posts.order4 != '0') {
+    allItems.push(posts.order4);
+  }
+  if (posts.order5 != '0') {
+    allItems.push(posts.order5);
+  }
+
+  const paths = allItems.map(item => {
     return {
       params: { slug: item.slug }
     };

@@ -56,7 +56,12 @@ export interface IPostFetch{
                 legend_file?: string,
                 createdAt: string
             }
-        ]
+        ],
+        order1: {},
+        order2: {},
+        order3: {},
+        order4: {},
+        order5: {},
     }
     banners: {
         vertical: {
