@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-// refresh 1
+// refresh 2
 
 import Navbar from '../components/Navbar';
 import NewsCard from '../components/NewsCard';
