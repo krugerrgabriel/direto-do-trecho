@@ -236,7 +236,7 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
 
           <Col lg={4} className="hide-992px">
             {/* @ts-ignore */}
-            <Sidebar color="black" posts={posts.moreVisited} />
+            <Sidebar color="black" posts={posts.recents} />
             {/* @ts-ignore */}
             <VerticalBanner banners={banners.vertical} />
           </Col>
@@ -260,7 +260,7 @@ export const getStaticProps: GetStaticProps = async () => {
         'Content-Type': 'application/json; charset=UTF-8'
       },
       body: JSON.stringify({
-        moreVisited: true,
+        recents: true,
         new: true,
         allItems: true,
         order: true,

@@ -23,7 +23,7 @@ const Sidebar: React.FC<ISidebar> = props => {
           </div>
         </div>
         <Subtitle margin="0 0 0 6px" color={props.color}>
-          MAIS VISTOS
+          RECENTES
         </Subtitle>
         <div className="margin-24px"></div>
         {/* @ts-ignore */}

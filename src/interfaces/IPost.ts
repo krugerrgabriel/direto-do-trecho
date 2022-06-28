@@ -38,7 +38,7 @@ export interface IPostFetch{
                 createdAt: string
             }
         ],
-        moreVisited: [
+        recents: [
             {
                 id: Number,
                 slug: string,

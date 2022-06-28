@@ -164,7 +164,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
           <Col lg={4} className="hide-992px">
             <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
-            <Sidebar color="black" posts={posts.moreVisited} />
+            <Sidebar color="black" posts={posts.recents} />
             {/* @ts-ignore */}
             {height >= 1900 ? (
               <VerticalBanner banners={banners.vertical} />
@@ -325,7 +325,7 @@ export const getStaticProps: GetStaticProps = async context => {
         slug,
         related: true,
         new: true,
-        moreVisited: true
+        recents: true
       })
     }
   );

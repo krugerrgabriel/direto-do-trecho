@@ -1,6 +1,6 @@
 export interface ISidebar{
     posts: {
-        moreVisited: [
+        recents: [
             {
                 id: Number,
                 title: String,
