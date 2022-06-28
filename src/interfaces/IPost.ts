@@ -62,6 +62,7 @@ export interface IPostFetch{
         order3: {},
         order4: {},
         order5: {},
+        imagesExists: []
     }
     banners: {
         vertical: {

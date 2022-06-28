@@ -48,6 +48,14 @@ export default createGlobalStyle`
         text-decoration: none;
     }
 
+    .carousel-item{
+        position: relative;
+
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+    }
+
     @media(max-width: 992px){
         .margin-36px-992px{
             margin: 36px 0 0 0;

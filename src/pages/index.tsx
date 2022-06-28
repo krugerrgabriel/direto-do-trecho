@@ -252,6 +252,7 @@ const Home: React.FC<IPostFetch> = ({ posts, banners }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const resPosts = await fetch(
     'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/news/get.php',
+    // 'http://localhost/souconsultor/backend/direto-do-trecho/news/get.php',
     {
       method: 'POST',
       mode: 'same-origin',

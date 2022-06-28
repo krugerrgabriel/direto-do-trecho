@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Carousel, Container, Row, Col } from 'react-bootstrap';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -43,6 +43,7 @@ import 'froala-editor/css/froala_style.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
+  console.log(posts);
   const pageRef = useRef();
   const [height, setHeight] = useState(0);
 
@@ -159,6 +160,25 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
               className="fr-view" // @ts-ignore
               dangerouslySetInnerHTML={{ __html: post.content }}
             ></div>
+
+            {posts.imagesExists ? (
+              <Carousel>
+                {posts.imagesExists.map((item, index) => {
+                  return (
+                    <Carousel.Item className="carousel-item">
+                      <Image
+                        src={`https://transdesk.com.br/souconsultor/grupo-unus/assets/img/news/${post.id}_0${item}.jpg`}
+                        alt={post.title + ' ' + index}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </Carousel.Item>
+                  );
+                })}
+              </Carousel>
+            ) : (
+              ''
+            )}
           </Col>
 
           <Col lg={4} className="hide-992px">
@@ -277,6 +297,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(
     'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/news/get.php'
+    // 'http://localhost/souconsultor/backend/direto-do-trecho/news/get.php'
   );
   const posts = await res.json();
 
@@ -314,6 +335,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const resPosts = await fetch(
     'https://transdesk.com.br/souconsultor/backend/direto-do-trecho/news/get.php',
+    // 'http://localhost/souconsultor/backend/direto-do-trecho/news/get.php',
     {
       method: 'POST',
       mode: 'same-origin',
