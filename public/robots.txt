@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://diretodotrecho.com.br
+
+# Sitemaps
+Sitemap: https://diretodotrecho.com.br/sitemap.xml
