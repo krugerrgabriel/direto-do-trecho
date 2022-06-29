@@ -56,6 +56,15 @@ export default createGlobalStyle`
         height: auto;
     }
 
+    .fr-view p{
+        line-height: 28px;
+    }
+
+    .vertical-banner{
+        position: sticky;
+        top: 195px;
+    }
+
     @media(max-width: 992px){
         .margin-36px-992px{
             margin: 36px 0 0 0;

@@ -27,6 +27,11 @@ export const Body = styled.article<{ type: String; }>`
             line-height: 27px;
 
             margin: ${({ type }) => type == 'normal' ? '4px 0 16px 0' : '0 0 18px 0'};
+
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         div{

@@ -181,7 +181,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
             )}
           </Col>
 
-          <Col lg={4} className="hide-992px">
+          <Col lg={4} className="hide-992px position-relative">
             <div className="margin-36px-992px"></div>
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.recents} />

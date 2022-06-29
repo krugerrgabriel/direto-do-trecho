@@ -31,7 +31,7 @@ const VerticalBanner: React.FC<IVerticalBanner> = props => {
   const [newsImageLoading, setNewsImageLoading] = useState(false);
 
   return (
-    <Col lg={12}>
+    <Col lg={12} className="vertical-banner">
       <Link href={banners[activeBanner].url || '#!'} passHref={true}>
         <a
           className={
