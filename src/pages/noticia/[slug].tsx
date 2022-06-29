@@ -43,7 +43,6 @@ import 'froala-editor/css/froala_style.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
-  console.log(posts);
   const pageRef = useRef();
 
   const [height, setHeight] = useState(0);
