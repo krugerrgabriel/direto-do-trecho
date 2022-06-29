@@ -44,7 +44,7 @@ const VerticalBanner: React.FC<IVerticalBanner> = props => {
           <Body title={banners[activeBanner].title}>
             {!newsImageLoading ? <SkeletonLoader /> : null}
             <Image
-              src={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners[activeBanner].id}.jpg`}
+              src={`https://transdesk.com.br/souconsultor/direto-do-trecho/assets/img/banners/${banners[activeBanner].id}.jpg?1`}
               alt={banners[activeBanner].title}
               layout="fill"
               objectFit="cover"
