@@ -45,7 +45,9 @@ import 'font-awesome/css/font-awesome.css';
 const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
   console.log(posts);
   const pageRef = useRef();
+
   const [height, setHeight] = useState(0);
+  const [heightSidebar, setHeightSidebar] = useState(0);
 
   const [newsImageLoading, setNewsImageLoading] = useState(false);
 
@@ -53,6 +55,8 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
     // @ts-ignore
     let newHeight = pageRef.current.clientHeight;
     setHeight(newHeight);
+
+    setHeightSidebar(142 + posts.recents.length * 310);
   }, []);
 
   var post = posts.data[0];
@@ -123,8 +127,8 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
       <Navbar />
       <Breadcrumb itemId={post.id} itemName={post.title} />
       <Container>
-        <Row className="margin-72px" ref={pageRef}>
-          <Col lg={8} md={12} xs={12}>
+        <Row className="margin-72px">
+          <Col lg={8} md={12} xs={12} ref={pageRef}>
             <Author>
               <b>Por:</b> {post.userName}
             </Author>
@@ -186,7 +190,7 @@ const Item: React.FC<IPostFetch> = ({ posts, banners }) => {
             {/* @ts-ignore */}
             <Sidebar color="black" posts={posts.recents} />
             {/* @ts-ignore */}
-            {height >= 1900 ? (
+            {height >= heightSidebar ? (
               <VerticalBanner banners={banners.vertical} />
             ) : (
               ''
