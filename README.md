@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.diretodotrecho.com.br">
-    <img alt="Direto do Trecho" src="https://diretodotrecho.com.br/logo01.svg" width="60" />
+    <img alt="Direto do Trecho" src="https://diretodotrecho.com.br/logo01.svg" width="500" />
   </a>
 </p>
 <h1 align="center">
