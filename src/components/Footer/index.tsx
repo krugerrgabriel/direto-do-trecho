@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             sx={12}
             className="justify-content-center d-flex"
           >
-            <Sitemap>
+            {/* <Sitemap>
               <h2> ACESSO RÁPIDO </h2>
               <Link href="/">
                 <a> INÍCIO </a>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
               <Link href="/">
                 <a> LOREM IPSUM </a>
               </Link>
-            </Sitemap>
+            </Sitemap> */}
           </Col>
 
           <Col
